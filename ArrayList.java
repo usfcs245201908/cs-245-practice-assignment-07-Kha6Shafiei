@@ -7,14 +7,7 @@ public class ArrayList<T> implements List<T>{
 		a=(T[]) new Object[10];
 	}
 
-	public void grow_array(){
-		T[] new_arr = (T[]) new Object[a.length*2];
-		for(int i=0; i<a.length; i++)
-			new_arr[i]=a[i];
-		a=new_arr;
-	}
-
-	//size is the next open index in the list
+	
 	public void add(T item){
 		if(a.length==size)
 			grow_array();
@@ -54,5 +47,12 @@ public class ArrayList<T> implements List<T>{
 
 	public int size(){
 		return size;
+	}
+
+	public void grow_array(){
+		T[] new_arr = (T[]) new Object[a.length*2];
+		for(int i=0; i<a.length; i++)
+			new_arr[i]=a[i];
+		a=new_arr;
 	}
 }
